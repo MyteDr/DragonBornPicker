@@ -10,102 +10,94 @@ body{
     background-size: cover;
     user-select: none;
 }
+h1{
+    text-shadow: 0px 0px 10px salmon ;
+    margin-top: 10px;
+}
 .container{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: 10px;
 
 }
-.input-text{
-    margin-right: 85px;
-    background: transparent;
-    border-radius: 7px;
-    position: relative;
-    top: 10px;
-    left: 56px;
-    border:2px solid gainsboro;
-    color: white;
-}
-.ekle{
-    position: relative;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 700;
-    width:100px;
-    justify-content: center;
-    top: 10px;
-    right: 27px;
+.list{
+    text-transform: capitalize;
+    font-size:30px;
+    font-weight: 900;
     border-radius: 10px;
-    border: 2px solid black;
-    background-color: seagreen;
-    transition: background-color ease-in 650ms;
+    border: 3px solid gray;
+    box-shadow: 0px 0px 15px seagreen;
+    margin-top: 20px;
+    background-color: white;
+    width: 160%;
+    height: 400px;
 }
-.ekle:hover{
-    background-color: black;
+.list p{
+    transition: color ease-in 400ms,opacity ease-in 400ms;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-text{
+    height: 25px;
+    margin-top: 20px;
+    background: transparent;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+a{
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 3px;
+    display: inline-block;
+    background-color: seagreen;
+    width: 110px;
+    height: 25px;
+    border-radius: 20px;
+    transition: background ease-in 400ms,color ease-in 400ms;
+}
+a:hover{
+    background: black;
     color: seagreen;
 }
-.list{
+i{
     position: relative;
-    display:inline-block;
-    background-color: whitesmoke;
-    top: 40px;
-    width: 500px;
-    height: 370px;
-    border: 2px solid silver;
-    overflow: auto;
-
-}
-.list-item{
-    color: black;
-    font-size: 31px;
-    font-weight: 900;
-    text-transform: capitalize;
+    right: 27px;
 }
 .çek{
-    position: relative;
-    display: inline-block;
-    top:60px;
-    right: 310px;
-    font-size: 15px;
-    font-weight: 700;
-    width:100px;
-    justify-content: center;
-    border-radius: 10px;
-    border: 2px solid black;
-    background-color: seagreen;
-    transition: background-color ease-in 650ms;
-}
-.çek:hover{
-    background-color: black;
-    color: seagreen;
-}
-#dice{
-    position: relative;
-    top: 61px;
-    right: 410px;
-}
-.çek:hover + i{
-    color: seagreen;
-}
-#plus{
-    position: relative;
-    right: 127px;
-    top: 11px;
-}
-.ekle:hover + #plus{
-    color: seagreen;
+    margin-top: 10px;
 }
 .dragonborn{
     color:darkred;
-    font-size: 31px;
-    font-weight: 900;
-    text-transform: capitalize;
-    transition: color ease-in 500ms , opacity ease-in 500ms;
 }
-a{
-    cursor: pointer;
-}
-p{
-    transition: color ease-in 500ms , opacity ease-in 500ms;
+@media screen and (max-width:768px){
+    .head{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .head a{
+        margin-top: 10px;
+    }
+    .list{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    
 }
