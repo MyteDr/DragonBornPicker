@@ -2,6 +2,7 @@ const input = document.querySelector('.input-text');
 const list = document.querySelector('.list');
 const audio = new Audio('a.mp3');
 const sonuc = document.getElementById('sonuc');
+screen.orientation.lock('portrait');
 audio.volume=0.1;
 var el_list =[];
 function Onclick(){
