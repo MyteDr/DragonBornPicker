@@ -1,6 +1,6 @@
 const audio = new Audio('a.mp3');
 audio.volume=0.1;
-var el_list =[];
+var el_list = [];
 $(document).ready(function(){
     $('.input-text').keypress(function(e){
         if(e.which==13)
@@ -10,38 +10,31 @@ $(document).ready(function(){
                 alert("Boş bırakma la alanı gardaş");
             }
             else{
-                var element = document.createElement('p');
-                element.innerText=$('.input-text').val();
-                element.className="list-item";
+                var element = $('<p></p>');
+                element.addClass('list-item');
+                element.html($('.input-text').val());
                 $('.list').append(element);
-                el_list.push(element);
                 $('.input-text').val("");
-                el_list.forEach(i => {
-                    i.addEventListener("click",function(){
-                        el_list[el_list.indexOf(i)].style.opacity=0;
-                        setTimeout(function(){
-                            delete el_list[el_list.indexOf(i)];
-                            el_list = el_list.filter(item =>item);     
-                            i.remove();
-                        },500);
-                    });
-                });
+                el_list.push(element);
             }
             return false;
         }
     });
+    $(document).on('click','p',function(){
+        el_list = el_list.filter(item =>{item !=$(this) ? true : false});
+        $(this).css('opacity','0');
+        setTimeout(()=>{
+            $(this).remove();  
+        },500);
+    });
     $('.çek').click( function(){
-        if(el_list.length == 0)
+        console.log(el_list);
+        el_list.length==0 ? (alert("Boş liste la gardaş")):(el_list.length==1 ? alert('Tek kişi ile ne çekilişi usta'): Roll());
+        function Roll()
         {
-            alert("Boş liste la gardaş");
-        }
-        else
-        {
-            el_list.forEach(i =>{
-                i.className="list-item";
-            });
+            $('p').each(function(){$(this).removeClass('dragonborn')});
             audio.play();
-            el_list[Math.floor(Math.random() * (el_list.length))].className="dragonborn";
+            el_list[Math.floor(Math.random() * (el_list.length))].addClass("dragonborn");
         }
     });
 });
