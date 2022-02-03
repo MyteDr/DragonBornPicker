@@ -7,7 +7,7 @@ $(document).ready(function(){
         {
             if(($('.input-text').val().trim()) === "")
             {
-                alert("Boş bırakma la alanı gardaş");
+                alert("please do not leave the field blank");
             }
             else{
                 var element = $('<p></p>');
@@ -28,7 +28,7 @@ $(document).ready(function(){
         },500);
     });
     $('.çek').click( function(){
-        el_list.length==0 ? (alert("Boş liste la gardaş")):(el_list.length==1 ? alert('Tek kişi ile ne çekilişi usta'): Roll());
+        el_list.length==0 ? (alert("please do not leave the list blank")):(el_list.length==1 ? alert('It is not possible to draw with one person.'): Roll());
         function Roll()
         {
             $('p').each(function(){$(this).removeClass('dragonborn')});
