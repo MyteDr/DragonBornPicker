@@ -21,14 +21,13 @@ $(document).ready(function(){
         }
     });
     $(document).on('click','p',function(){
-        el_list = el_list.filter(item =>{item !=$(this) ? true : false});
+        el_list=el_list.filter(item =>item[0] !=$(this)[0]);
         $(this).css('opacity','0');
         setTimeout(()=>{
             $(this).remove();  
         },500);
     });
     $('.çek').click( function(){
-        console.log(el_list);
         el_list.length==0 ? (alert("Boş liste la gardaş")):(el_list.length==1 ? alert('Tek kişi ile ne çekilişi usta'): Roll());
         function Roll()
         {
